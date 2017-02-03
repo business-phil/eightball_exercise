@@ -1,2 +1,10 @@
-<h1>Eightball#index</h1>
-<p>Find me in app/views/eightball/index.html.erb</p>
+<div id="main">
+  <h1>Magic Eight Ball</h1>
+  <form action="/eightball" method="post">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+    <button type="submit">Shake!</button>
+  </form>
+  <% if @answer %>
+    <h2 id="answer" class="<%= @answer.category %>" ><%= @answer.answer %></h2>
+  <% end %>
+</div>

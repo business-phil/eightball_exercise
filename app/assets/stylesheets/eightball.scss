@@ -1,3 +1,10 @@
-// Place all the styles related to the Eightball controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+h2.positive {
+  color: blue;
+}
+h2.negative {
+  color: red;
+}
+h2.non-committal {
+  color: grey;
+  font-style: italic;
+}
