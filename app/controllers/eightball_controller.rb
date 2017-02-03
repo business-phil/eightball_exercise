@@ -9,4 +9,9 @@ class EightballController < ApplicationController
     session[:answer] = Random.rand(1..20)
     redirect_to "/eightball"
   end
+
+  def destroy
+    session[:answer] = nil if session[:answer]
+    redirect_to "/eightball"
+  end
 end
