@@ -1,17 +1,17 @@
 class EightballController < ApplicationController
   def index
-    if session[:answer]
-      @answer = Answer.find(session[:answer])
-    end
+    # if session[:answer]
+    #   @answer = Answer.find(session[:answer])
+    # end
   end
 
   def refresh
-    session[:answer] = Random.rand(1..20)
+    @answer = Answer.find(Random.rand(1..20))
     redirect_to "/eightball"
   end
 
   def destroy
-    session[:answer] = nil if session[:answer]
+    @answer = nil if @answer
     redirect_to "/eightball"
   end
 end
